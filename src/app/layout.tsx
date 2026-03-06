@@ -54,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="color-scheme" content="light only" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
