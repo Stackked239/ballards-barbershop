@@ -50,61 +50,63 @@ export default function Header() {
   }, [menuOpen]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled
-          ? "bg-navy-deep/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-3"
-          : "bg-transparent py-5 md:py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between relative z-10">
-          <a href="#home" className="flex-shrink-0 group">
-            <Image
-              src="/images/logo.png"
-              alt="Ballard's Barbershop"
-              width={50}
-              height={50}
-              className={`w-auto transition-all duration-500 ${
-                scrolled ? "h-9 md:h-10" : "h-10 md:h-12"
-              } group-hover:brightness-110`}
-            />
-          </a>
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+          scrolled
+            ? "bg-navy-deep/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] py-3"
+            : "bg-transparent py-5 md:py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center justify-between">
+            <a href="#home" className="flex-shrink-0 group">
+              <Image
+                src="/images/logo.png"
+                alt="Ballard's Barbershop"
+                width={50}
+                height={50}
+                className={`w-auto transition-all duration-500 ${
+                  scrolled ? "h-9 md:h-10" : "h-10 md:h-12"
+                } group-hover:brightness-110`}
+              />
+            </a>
 
-          <nav className="hidden md:flex items-center gap-10 lg:gap-12">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`relative font-[family-name:var(--font-heading)] text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.3em] transition-colors duration-300 after:absolute after:bottom-[-6px] after:left-1/2 after:-translate-x-1/2 after:h-px after:bg-gold after:transition-all after:duration-500 ${
-                  activeSection === link.section
-                    ? "text-gold after:w-full"
-                    : "text-white/90 hover:text-gold after:w-0 hover:after:w-full"
-                }`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+            <nav className="hidden md:flex items-center gap-10 lg:gap-12">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`relative font-[family-name:var(--font-heading)] text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.3em] transition-colors duration-300 after:absolute after:bottom-[-6px] after:left-1/2 after:-translate-x-1/2 after:h-px after:bg-gold after:transition-all after:duration-500 ${
+                    activeSection === link.section
+                      ? "text-gold after:w-full"
+                      : "text-white/90 hover:text-gold after:w-0 hover:after:w-full"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white p-2"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-          >
-            <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span className={`w-full h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[9px]" : ""}`} />
-              <span className={`w-full h-px bg-white transition-all duration-200 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-              <span className={`w-full h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`} />
-            </div>
-          </button>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden text-white p-2"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span className={`w-full h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[9px]" : ""}`} />
+                <span className={`w-full h-px bg-white transition-all duration-200 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+                <span className={`w-full h-px bg-white transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[9px]" : ""}`} />
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — outside header to avoid backdrop-filter containing block */}
       <div
-        className={`md:hidden fixed inset-0 bg-navy-deep backdrop-blur-xl transition-all duration-500 flex flex-col items-center justify-center ${
+        className={`md:hidden fixed inset-0 z-40 bg-navy-deep transition-all duration-500 flex flex-col items-center justify-center ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMenuOpen(false)}
@@ -129,6 +131,6 @@ export default function Header() {
           ))}
         </nav>
       </div>
-    </header>
+    </>
   );
 }
