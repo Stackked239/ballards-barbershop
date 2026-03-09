@@ -58,7 +58,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between relative z-10">
           <a href="#home" className="flex-shrink-0 group">
             <Image
               src="/images/logo.png"
@@ -104,9 +104,10 @@ export default function Header() {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden fixed inset-0 top-0 bg-navy-deep/98 backdrop-blur-xl transition-all duration-500 flex flex-col items-center justify-center ${
+        className={`md:hidden fixed inset-0 bg-navy-deep backdrop-blur-xl transition-all duration-500 flex flex-col items-center justify-center ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        onClick={() => setMenuOpen(false)}
       >
         <nav className="flex flex-col items-center gap-8">
           {navLinks.map((link, i) => (
