@@ -60,6 +60,18 @@ export default function Hero() {
           />
         </div>
 
+        {/* Primary heading — visible for SEO, brand name kept accessible */}
+        <h1
+          className="font-[family-name:var(--font-heading)] text-white/90 text-base md:text-2xl font-light uppercase tracking-[0.3em] mb-6 transition-all duration-1000 delay-300"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(10px)",
+          }}
+        >
+          <span className="sr-only">Ballard&apos;s Barbershop &mdash; </span>
+          Classic Cuts, Modern Style in Belmont, NC
+        </h1>
+
         {/* Subtitle ornament */}
         <div
           className="flex items-center justify-center gap-4 mb-12 transition-all duration-1000 delay-500"
@@ -92,9 +104,6 @@ export default function Hero() {
             Book an Appointment
           </a>
         </div>
-
-        {/* Visually hidden h1 for SEO */}
-        <h1 className="sr-only">Ballard&apos;s Barbershop - Premium Barbershop in Belmont, NC</h1>
       </div>
 
       {/* Bottom edge — thin gold accent line + shadow for depth */}
