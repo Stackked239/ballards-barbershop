@@ -34,7 +34,7 @@ export default function Atmosphere() {
               <p className="text-white/80 text-sm md:text-base leading-[1.9] font-[family-name:var(--font-body)]">
                 Ballard&apos;s is your classic barbershop with an upscale vibe,
                 small town charm, and all things dapper. Come relax with the
-                builds and enjoy an old fashioned glass bottle coke.
+                buds and enjoy an old fashioned glass bottle coke.
               </p>
             </div>
           </div>
