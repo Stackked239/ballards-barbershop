@@ -31,18 +31,41 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const SITE_URL = "https://www.ballardsbarbershop.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Ballard's Barbershop | Classic Cuts, Modern Style | Belmont, NC",
   description:
     "Ballard's Barbershop in Belmont, NC offers classic barbershop cuts with an upscale vibe. Book your appointment today. Serving the community since 1949.",
   keywords:
     "barbershop, Belmont NC, haircut, men's grooming, classic cut, shave, Ballard's",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Ballard's Barbershop | Belmont, NC",
     description:
       "Classic barbershop with an upscale vibe. Serving Belmont since 1949.",
+    url: SITE_URL,
+    siteName: "Ballard's Barbershop",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/storefront.png",
+        width: 2500,
+        height: 1667,
+        alt: "Ballard's Barbershop storefront in downtown Belmont, NC",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ballard's Barbershop | Belmont, NC",
+    description:
+      "Classic barbershop with an upscale vibe. Serving Belmont since 1949.",
+    images: ["/images/storefront.png"],
   },
 };
 
@@ -91,7 +114,12 @@ export default function RootLayout({
                   closes: "15:00",
                 },
               ],
-              url: "https://ballardsbarbershop.com",
+              url: SITE_URL,
+              image: `${SITE_URL}/images/storefront.png`,
+              sameAs: [
+                "https://www.facebook.com/BallardsBarbershopNC",
+                "https://www.instagram.com/ballardsbarbershopnc/",
+              ],
             }),
           }}
         />

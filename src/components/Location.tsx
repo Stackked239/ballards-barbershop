@@ -7,15 +7,19 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 const BOOKING_URL = "https://www.phorest.com/salon/ballardsbarbershop";
 const COORDS: [number, number] = [-81.0378, 35.2432];
+const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+// Keyless Google Maps embed used when no Mapbox token is configured.
+const MAPS_EMBED_URL =
+  "https://www.google.com/maps?q=200+N+Main+St,+Belmont,+NC+28012&z=15&output=embed";
 
 export default function Location() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
 
   useEffect(() => {
-    if (!mapContainer.current || mapRef.current) return;
+    if (!MAPBOX_TOKEN || !mapContainer.current || mapRef.current) return;
 
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+    mapboxgl.accessToken = MAPBOX_TOKEN;
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -74,12 +78,22 @@ export default function Location() {
           </div>
         </div>
 
-        {/* Map */}
+        {/* Map — Mapbox when a token is configured, keyless Google Maps embed otherwise */}
         <div className="reveal reveal-delay-1 mb-10">
-          <div
-            ref={mapContainer}
-            className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden border border-gold/10"
-          />
+          {MAPBOX_TOKEN ? (
+            <div
+              ref={mapContainer}
+              className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden border border-gold/10"
+            />
+          ) : (
+            <iframe
+              title="Map to Ballard's Barbershop, 200 N. Main St., Belmont, NC 28012"
+              src={MAPS_EMBED_URL}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full aspect-[16/9] md:aspect-[2.2/1] overflow-hidden border border-gold/10"
+            />
+          )}
         </div>
 
         {/* Contact info row */}
@@ -91,7 +105,7 @@ export default function Location() {
             <p className="text-white/70 text-[13px] md:text-[15px] tracking-wide leading-relaxed font-[family-name:var(--font-body)]">
               200 N. Main St.
               <br />
-              Belmont, NC
+              Belmont, NC 28012
             </p>
           </div>
           <div>
