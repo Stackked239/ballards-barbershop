@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+
+Host: https://www.ballardsbarbershop.com
+Sitemap: https://www.ballardsbarbershop.com/sitemap.xml
+# LLM-readable site summary
+# https://www.ballardsbarbershop.com/llms.txt

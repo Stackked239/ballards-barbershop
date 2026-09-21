@@ -78,6 +78,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="color-scheme" content="light only" />
+        <link rel="describedby" href={`${SITE_URL}/llms.txt`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

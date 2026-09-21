@@ -1,0 +1,35 @@
+# Ballard's Barbershop
+
+> Classic barbershop with an upscale vibe in downtown Belmont, NC. Established 1949. Classic cuts, modern style.
+
+Ballard's Barbershop is a classic community barbershop with a modern vibe at 200 N. Main St., Belmont, NC 28012. Phone: 704.741.1900. Hours: Monday–Friday 9am–7pm; Saturday 8am–3pm.
+
+In 1949, William Henry "Bill" Ballard set up shop and Ballard's Barbershop was born. For decades it was a pillar in the Belmont community — a place where men came for a quality cut and good conversation. Reimagined in 2019, the shop found a new home at 200 N Main Street in downtown Belmont. The location is new; the spirit is the same: relax, catch up with friends, and leave looking your best.
+
+The shop is a classic barbershop with an upscale vibe, small town charm, and all things dapper.
+
+Services (prices vary by barber): Classic Cut $30+; Buzz Cut $25+; Head Shave $40+; Lineups $20+. Packages: The Refiner $45 (precision cut and hot lather shave; the gentleman with a full beard); The Classic $55 (precision cut and full hot lather shave); The Signature $65 (precision cut, full hot lather shave, and a relaxing facial). All shaves come complete with hot towels, pre shave oil, hot lather, and a cold towel finish.
+
+Master barbers: Dustin Prince, Rob Bumgardner, Dustin Helms, Ed Trevino, Ray Goodson, Dustin Goodson, and Bryan Walls.
+
+Book an appointment online or call 704.741.1900. The homepage includes schema.org BarberShop structured data.
+
+## Pages
+
+- [Home](https://www.ballardsbarbershop.com/): Classic Cuts, Modern Style in Belmont, NC
+- [Services](https://www.ballardsbarbershop.com/#services): Cuts, shaves, and packages
+- [Our Team](https://www.ballardsbarbershop.com/#team): Master barbers and individual pricing
+- [Our Story](https://www.ballardsbarbershop.com/#story): History since 1949
+- [Location](https://www.ballardsbarbershop.com/#location): Address, hours, and map
+- [Contact](https://www.ballardsbarbershop.com/#contact): Phone and visit information
+
+## Booking
+
+- [Book an Appointment](https://www.phorest.com/salon/ballardsbarbershop): Online booking
+
+## Optional
+
+- [Facebook](https://www.facebook.com/BallardsBarbershopNC)
+- [Instagram](https://www.instagram.com/ballardsbarbershopnc/)
+- [Directions](https://www.google.com/maps/dir/?api=1&destination=200+N+Main+St+Belmont+NC+28012)
+- [Sitemap](https://www.ballardsbarbershop.com/sitemap.xml)
